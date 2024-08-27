@@ -3,8 +3,10 @@
 # python ci mette a disposizione tre tipi (che in python sono ancora considerati primitivi -> built-ins)
 
 list
-dict
 tuple
+set
+dict
+
 
 # torniamo alle slides
 
@@ -39,7 +41,8 @@ print(stringa3)
 # Questo indica che ogni operazione che comporterebbe la modifica della stringa originale, in realtà genera un nuovo oggetto
 # di tipo str frutto della copia della stringa originale con appunto le modifiche che gli abbiamo voluto fare.
 
-# Se vogliamo modificarne il contenuto in-place (cioè mantenendo un singolo oggetto in memoria dobbiamo usare la notazione che autoreferenzia la stringa
+# Se vogliamo modificarne il contenuto in-place (cioè mantenendo un singolo oggetto in memoria dobbiamo usare la notazione
+# che autoreferenzia la stringa
 
 
 stringa1 = stringa1.replace('a', 'o')
@@ -56,7 +59,7 @@ print(stringa1)
 
 # in tutti i casi python copia il contenuto della stringa1 in un nuovo oggetto (a cui fa le modifiche necessarie) e cambia
 # il reference dell'etichetta stringa1 sul nuovo oggetto, cancellando quello precedente. È un'operazione che comporta un dispendio
-# di risorse "inutili". Per cui quando utilizziamo degli oggetti immutable dobbiamo pensarci un paio di volte prima di modificarlo
+# di risorse "inutili". Per cui quando utilizziamo degli oggetti immutables dobbiamo pensarci un paio di volte prima di modificarlo
 
 # cosa c'entra questo con le liste, perchè di liste stavamo parlando
 
