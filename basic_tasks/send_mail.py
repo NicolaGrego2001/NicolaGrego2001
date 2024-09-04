@@ -6,7 +6,6 @@ with open('/tmp/password.txt', 'rt') as in_password:
 username = 's.brazioli@next-data.com'
 
 with smtplib.SMTP_SSL('smtp.next-cloud.it', 465) as smtp_server:
-    smtp_server.auth()
     smtp_server.login(username, password)
 
     msg = MIMEText("Hello, this is a test email.")
