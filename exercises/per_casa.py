@@ -1,3 +1,10 @@
+# online interpreter
+# https://www.w3schools.com/Python/trypython.asp?filename=demo_compiler
+
+# pycharm
+# https://www.jetbrains.com/pycharm/download
+# scendere sotto per la versione community
+
 # scrivere funzione che prende in input due interi e ne calcola la somma
 
 def somma(a: int, b: int) -> int:
