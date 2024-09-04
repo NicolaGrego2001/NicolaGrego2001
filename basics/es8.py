@@ -53,11 +53,17 @@ diz1 = {
 }
 
 print(diz1)
-diz2 = diz1.copy()
+# diz2 = diz1.copy()
 
+import copy
+
+diz2 = copy.deepcopy(diz1)
+print(diz2['nome'])
 diz2['nome'] = 'Gianluca'
 diz2['eta'] = 25
-passioni.append('corsa')
+diz2['nuovo'] = 'pippo'
+print(f"Stampo il valore: {diz2['nuovo']}")
+diz2['passioni'].append('corsa')
 
 print(diz1)
 print(diz2)

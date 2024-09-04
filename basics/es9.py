@@ -9,5 +9,5 @@ for index, elemento in enumerate(lista1):
     print(f'Indice: {index}, Elemento: {elemento}')
 
 lista2 = [1, 2, 3]
-for lettera, numero in zip(lista1, lista2):
-    print(f'Lettera: {lettera}, Numero: {numero}')
+for lettera1, numero1, lettera2, numero2 in zip(lista1, lista2, lista1, lista2):
+    print(f'Lettera: {id(lista1)}, Numero: {numero1} || Lettera: {lettera2}, Numero: {numero2}')

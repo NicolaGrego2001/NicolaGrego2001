@@ -96,7 +96,7 @@ lista_dentro = [4]
 lista = [1, 2, 3, lista_dentro]
 
 print(lista)
-
+lista[2]
 lista_dentro.append(5)
 
 print(lista)

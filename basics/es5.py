@@ -8,7 +8,7 @@ tupla2 = (1, 'a', True)
 for elem in tupla1:
     print(elem)
 
-print(tupla2.index(True))
+print(tupla2.index('a'))
 print(tupla1.count(3))
 
 lista1 = ['a', 'b', 'c']

@@ -28,3 +28,5 @@ for elemento in lista:
     set1.add(elemento)
 print(set1)
 
+print(list(set(lista)))
+
