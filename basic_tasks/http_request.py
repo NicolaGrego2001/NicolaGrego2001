@@ -1,12 +1,27 @@
 import requests
 
+# richieste dirette
 print(requests.get('https://www.google.com'))
-print(requests.get('https://www.google.com').text)
-response = requests.get('https://www.google.com')
-print(response.text)
 
-persistent_connection = requests.session()
-response = persistent_connection.get('https://www.google.com')
-print(persistent_connection.cookies)
-response = persistent_connection.get('https://www.google.com/search?client=firefox-b-d&q=ciao')
-print(response.text)
+# ottengo testo
+print(requests.get('https://www.google.com').text)
+
+# ottengo status code
+print(requests.get('https://www.google.com').status_code)
+
+# sessione
+session = requests.session()
+response1 = session.get('https://www.google.com')
+print(session.cookies)
+response2 = session.get('https://www.google.com/search?client=firefox-b-d&q=ciao')
+print(response2.text)
+
+session.close()
+
+# con context manager
+with requests.Session() as s:
+    r = s.get('https://www.google.com')
+    print(r.status_code)
+    print(s.cookies)
+
+# qui la sessione viene chiusa automaticamente
