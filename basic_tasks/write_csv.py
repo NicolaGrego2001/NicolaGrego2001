@@ -1,27 +1,24 @@
 import csv
 
-# Data for the CSV
 data = [
-    ["Emily", "Johnson"],
-    ["Michael", "Brown"],
-    ["Olivia", "Williams"],
-    ["James", "Davis"],
-    ["Isabella", "Garcia"],
-    ["Ethan", "Martinez"],
-    ["Sophia", "Anderson"],
-    ["Daniel", "Rodriguez"],
-    ["Mia", "Thomas"],
-    ["William", "Moore"]
+    {'name': 'Emily', 'surname': 'Johnson'},
+    {'name': 'Michael', 'surname': 'Brown'},
+    {'name': 'Olivia', 'surname': 'Williams'},
+    {'name': 'James', 'surname': 'Davis'},
+    {'name': 'Isabella', 'surname': 'Garcia'},
+    {'name': 'Ethan', 'surname': 'Martinez'},
+    {'name': 'Sophia', 'surname': 'Anderson'},
+    {'name': 'Daniel', 'surname': 'Rodriguez'},
+    {'name': 'Mia', 'surname': 'Thomas'},
+    {'name': 'William', 'surname': 'Moore'}
 ]
 
 # Filepath to save the CSV
 simple_csv_filepath = 'base.csv'
 
 # Create the CSV file with 10 records
-with open(simple_csv_filepath, mode='w', newline='') as file:
-    writer = csv.writer(file)
-    # Write header
-    writer.writerow(['name', 'surname'])
-
-    # Write data
+with open(simple_csv_filepath, mode='wt') as out_csv:
+    writer = csv.DictWriter(out_csv, ['name', 'surname'])
+    writer.writeheader()
     writer.writerows(data)
+
