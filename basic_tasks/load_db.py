@@ -2,14 +2,14 @@ import mysql.connector
 
 # dettagli connessione
 details = {
-    'host': "172.17.0.2",
-    'user': "prod",
+    'host': "192.168.1.119",
+    'user': "testuser",
     'password': "password",
-    'database': "gestionale"
+    'database': "test"
 }
 
 
-def init_db_connection(db_details: dict) -> mysql.connector.MySQLConnection:
+def init_db_connection(db_details: dict):
     # inizializzo connessione
     return mysql.connector.connect(**db_details)
 
@@ -34,6 +34,7 @@ def read():
 
     return results
 
+
 def read_condition():
     mydb = init_db_connection(details)  # ottengo connessione
 
@@ -55,6 +56,7 @@ def read_condition():
 
     return results
 
+
 def write():
     mydb = init_db_connection(details)  # ottengo connessione
 
@@ -62,6 +64,7 @@ def write():
     mycursor = mydb.cursor()
 
     # query
+    # query = "INSERT INTO test (nome, cognome) VALUES ('Pippo', 'D'Alessandro')"
     query = 'INSERT INTO test (nome, cognome) VALUES (%s, %s)'
     values = ('Pippo', 'De Pluti')
 
@@ -73,6 +76,7 @@ def write():
 
     # chiudo connessione
     mydb.close()
+
 
 def write_multiple():
     mydb = init_db_connection(details)  # ottengo connessione
@@ -93,6 +97,7 @@ def write_multiple():
     # chiudo connessione
     mydb.close()
 
+
 def edit():
     mydb = init_db_connection(details)  # ottengo connessione
 
@@ -101,7 +106,7 @@ def edit():
 
     # query
     query = 'UPDATE test SET cognome = %s WHERE nome = %s'
-    values = ('Bianchi', 'Pippo')
+    values = ('Bianchi', 'Mario')
 
     # eseguo query
     mycursor.execute(query, values)
@@ -111,6 +116,7 @@ def edit():
 
     # chiudo connessione
     mydb.close()
+
 
 def truncate():
     """
@@ -133,6 +139,7 @@ def truncate():
 
     # chiudo connessione
     mydb.close()
+
 
 def main():
     truncate()
@@ -163,7 +170,6 @@ def main():
 
     print(f"Pulisco")
     truncate()
-
 
 
 if __name__ == "__main__":
