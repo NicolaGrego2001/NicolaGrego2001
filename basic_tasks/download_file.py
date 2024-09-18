@@ -3,7 +3,7 @@ import os
 import requests
 
 url = 'https://sample-videos.com/csv/Sample-Spreadsheet-500000-rows.csv'
-file_path = './test.csv'
+file_path = r'.\test.csv'
 
 def with_requests():
 
@@ -23,8 +23,10 @@ def with_os_system():
     Solo su linux, da controllare come su windows
     :return:
     """
-    os.system(f'wget {url} -O {file_path}')
+    # os.system(f'wget {url} -O {file_path}')
+    cmd_command = f"""powershell -c "Invoke-WebRequest -Uri '{url}' -OutFile '{file_path}'" """
+    os.system(cmd_command)
 
 
-with_requests()
-#with_os_system()
+#with_requests()
+with_os_system()

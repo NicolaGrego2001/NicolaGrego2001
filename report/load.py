@@ -4,9 +4,9 @@ import mysql.connector
 
 mydb = mysql.connector.connect(
   host="172.17.0.2",
-  user="prod",
+  user="username",
   password="password",
-    database="gestionale"
+  database="gestionale"
 )
 
 
@@ -19,7 +19,7 @@ with open('calls.csv', 'rt') as in_csv:
     for row in reader:
         operators.append(row['caller_number'])
         clients.append(row['recipient_number'])
-
+    print(operators)
     operators = list(set(operators))
     clients = list(set(clients))
 
