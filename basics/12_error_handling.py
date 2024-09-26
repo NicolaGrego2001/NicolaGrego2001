@@ -12,7 +12,7 @@ numero_virgola_mobile: float = 10.0
 
 # le eccezioni non previste portano a un'interruzione del programma.
 # se ci aspettiamo che una parte di codice possa portare a un'eccezione o, in altre parole, a un errore
-# possiamo decidere se lasciare crashare un programma oppure se prevedere delle operazioni da fare nel caso d'errore
+# possiamo decidere se lasciare crashare il programma oppure se prevedere delle operazioni da fare nel caso d'errore
 
 try:
     non_somma = numero_intero + nome
@@ -23,7 +23,7 @@ except Exception as e:
 print(non_somma)
 
 # non bisogna essere troppo generici con gli errori che ci aspettiamo (Exception raggruppa un po' tutti i possibili
-# errori che possono succedere. È sempre molto, ma molto meglio catchare errori specifici per i quali si scrive del
+# errori che possono succedere). È sempre molto, ma MOLTO MEGLIO catchare errori specifici per i quali si scrive del
 # codice per porre rimedio. In questo caso viene sollevata un'eccezione del tipo TypeError, per cui meglio catchare
 # quel tipo di errore
 

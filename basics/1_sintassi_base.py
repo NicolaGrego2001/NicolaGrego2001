@@ -24,7 +24,7 @@ numero_intero: int = 10
 booleano: bool = True
 numero_virgola_mobile: float = 10.0
 
-# per stampare una variabile (o un qualsiasi oggetto volessimo stampare a schermo, possiamo usare la
+# per stampare una variabile (o un qualsiasi oggetto) volessimo stampare a schermo, possiamo usare la
 # FUNZIONE print()
 
 print(nome)
